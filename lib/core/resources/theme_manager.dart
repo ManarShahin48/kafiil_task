@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import '../../Core/Resources/uilites.dart';
+import '../../core/resources/uilites.dart';
 
 ThemeData getApplicationTheme() {
   return ThemeData(
     primaryColor: ColorManager.primary,
+    fontFamily: FontConstants.fontFamily,
     textSelectionTheme: const TextSelectionThemeData(
       cursorColor: ColorManager.primary, //thereby
     ),
@@ -26,14 +27,15 @@ ThemeData getApplicationTheme() {
       ),
     ),
     appBarTheme: const AppBarTheme(
-      actionsIconTheme: IconThemeData(color: Colors.red),
+      iconTheme: IconThemeData(size: 25),
       color: Colors.transparent,
+      surfaceTintColor: Colors.transparent,
       titleTextStyle: TextStyle(
         color: ColorManager.black,
-        fontSize: FontSize.s18,
-        fontWeight: FontWeight.w600,
-        // height: 20
-      )
+        fontSize: FontSize.s20,
+        fontWeight: FontWeightManager.w600,
+        fontFamily: FontConstants.fontFamily,
+      ),
     ),
   );
 }

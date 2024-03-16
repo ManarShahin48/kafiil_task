@@ -12,4 +12,6 @@ class ColorManager {
   static const Color secondaryLight = Color.fromRGBO(109, 109, 109, 1);
   static const Color search = Color.fromRGBO(240, 240, 240, 1);
   static const Color clicked = Color.fromRGBO(237, 135, 82, 1);
+  static Color grey50 = Colors.grey.shade50;
+  static Color grey500 = Colors.grey.shade500;
 }
