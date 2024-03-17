@@ -88,7 +88,9 @@ class LoginScreen extends StatelessWidget {
                     ),
                     CustomButton(
                       text: StringManager.login,
-                      onPressed: () {},
+                      onPressed: () {
+                        cubit.login();
+                      },
                     ).setVerticalPadding(context, 0.02),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
