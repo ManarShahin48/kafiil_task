@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kafiil_task/features/login/bloc/login_cubit.dart';
 import 'package:kafiil_task/features/login/bloc/login_state.dart';
+import 'package:kafiil_task/features/registeration/bloc/register_cubit.dart';
 import 'Resources/uilites.dart';
 import 'Routes/pages_route_name.dart';
 
@@ -11,7 +12,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-      providers: [BlocProvider(create: (context) => LoginCubit())],
+      providers: [
+        BlocProvider(create: (context) => LoginCubit()),
+        BlocProvider(create: (context) => RegisterCubit()),
+      ],
       child: BlocConsumer<LoginCubit, LoginStates>(
         listener: (context, state) {},
         builder: (context, state) {

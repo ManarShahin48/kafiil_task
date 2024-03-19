@@ -8,11 +8,13 @@ class CustomTextField extends StatelessWidget {
     required this.title,
     this.suffixIcon,
     this.obscureText = false,
+    this.isAbout = false,
   });
 
   final String title;
   final Widget? suffixIcon;
   final bool obscureText;
+  final bool isAbout;
 
   @override
   Widget build(BuildContext context) {
@@ -22,13 +24,16 @@ class CustomTextField extends StatelessWidget {
         Text(
           title,
         ),
-        TextFormField(
-          obscureText: obscureText,
-          decoration: InputDecoration(
-            fillColor: ColorManager.grey50,
-            suffixIcon: suffixIcon,
-          ),
-        ).setOnlyPadding(context, 0.02, 0, 0, 0)
+        SizedBox(
+          height: isAbout ? 150 : null,
+          child: TextFormField(
+            obscureText: obscureText,
+            decoration: InputDecoration(
+              fillColor: ColorManager.grey50,
+              suffixIcon: suffixIcon,
+            ),
+          ).setOnlyPadding(context, 0.02, 0, 0, 0),
+        )
       ],
     ).setOnlyPadding(context, 0.02, 0, 0, 0);
   }

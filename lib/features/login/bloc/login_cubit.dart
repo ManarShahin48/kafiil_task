@@ -15,7 +15,7 @@ class LoginCubit extends Cubit<LoginStates> {
   late LoginDataSourceImpl _dataSourceImpl;
   late LoginUseCase _useCase;
 
-  bool _showPassword = false, _getRemembered = false;
+  bool _showPassword = true, _getRemembered = true;
 
   final String _email = "", _password = "";
 

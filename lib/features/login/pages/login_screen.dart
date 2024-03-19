@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:kafiil_task/core/routes/pages_route_name.dart';
 import 'package:kafiil_task/core/components/custom_app_bar.dart';
 import 'package:kafiil_task/core/components/custom_button.dart';
 import 'package:kafiil_task/core/components/custom_text_field.dart';
@@ -28,8 +29,11 @@ class LoginScreen extends StatelessWidget {
               }
             },
             child: Scaffold(
-              appBar: const CustomAppBar(
+              appBar: CustomAppBar(
                 title: StringManager.accountLogin,
+                onPressed: () {
+                  Navigator.canPop(context);
+                },
               ),
               body: SingleChildScrollView(
                 child: Column(
@@ -111,7 +115,12 @@ class LoginScreen extends StatelessWidget {
                               color: ColorManager.primary,
                             ),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushNamed(
+                              context,
+                              PagesRoutesName.register,
+                            );
+                          },
                         ),
                       ],
                     ),
