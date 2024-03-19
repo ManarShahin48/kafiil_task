@@ -9,3 +9,7 @@ class ShowPassword extends RegisterStates {}
 class ShowConfirmPassword extends RegisterStates {}
 
 class ChangeRadioValue extends RegisterStates {}
+
+class ChangeStepperValue extends RegisterStates {}
+
+class JumpToPage extends RegisterStates {}
