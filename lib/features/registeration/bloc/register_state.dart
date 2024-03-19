@@ -13,3 +13,9 @@ class ChangeRadioValue extends RegisterStates {}
 class ChangeStepperValue extends RegisterStates {}
 
 class JumpToPage extends RegisterStates {}
+
+class Facebook extends RegisterStates {}
+
+class Twitter extends RegisterStates {}
+
+class LinkedIn extends RegisterStates {}

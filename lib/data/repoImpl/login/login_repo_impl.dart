@@ -4,6 +4,8 @@ import 'package:kafiil_task/data/datasoures/login/login_datasource.dart';
 import 'package:kafiil_task/data/models/login/login_model.dart';
 import 'package:kafiil_task/domain/repo/login/login_repo.dart';
 
+import '../../../core/resources/toast_service.dart';
+
 class LoginRepositoryImpl implements LoginRepository {
   final LoginDataSourceImpl dataSource;
 
@@ -22,6 +24,9 @@ class LoginRepositoryImpl implements LoginRepository {
     );
     if(result.statusCode == 302){
       print("object");
+    }
+    if(result.statusCode == 522){
+      ToastService.showUnExpectedErrorToast();
     }
     if (result.statusCode == 200 && result.data['status']) {
       LoginModel res = result.data['data'];

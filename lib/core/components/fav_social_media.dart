@@ -24,7 +24,7 @@ class FavSocialMedia extends StatelessWidget {
             IconButton(
               onPressed: onPressed,
               icon: Icon(
-                checked
+                !checked
                     ? Icons.check_box
                     : Icons.check_box_outline_blank_outlined,
                 color: ColorManager.primary,

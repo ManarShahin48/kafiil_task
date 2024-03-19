@@ -31,7 +31,7 @@ class CustomStepper extends StatelessWidget {
               ),
             ),
           ],
-        ).setHorizontalPadding(context, 0.23),
+        ).setHorizontalPadding(context, 0.2),
         SizedBox(
           height: mediaQuery.size.height * 0.01,
         ),

@@ -45,6 +45,29 @@ class RegisterCubit extends Cubit<RegisterStates> {
     emit(JumpToPage());
   }
 
+  bool _facebook = true, _twitter = true, _linkedIn = true;
+
+  bool get facebook => _facebook;
+
+  bool get twitter => _twitter;
+
+  bool get linkedIn => _linkedIn;
+
+  void toggleFacebook() {
+    _facebook = !_facebook;
+    emit(Facebook());
+  }
+
+  void toggleTwitter() {
+    _twitter = !_twitter;
+    emit(Twitter());
+  }
+
+  void toggleLinkedIn() {
+    _linkedIn = !_linkedIn;
+    emit(LinkedIn());
+  }
+
   void clear() {
     _pageController.dispose();
     _currentStep = true;

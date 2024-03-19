@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:kafiil_task/core/components/fav_social_media.dart';
 import 'package:kafiil_task/core/components/stepper.dart';
 import 'package:kafiil_task/core/extentions/padding_ext.dart';
@@ -41,7 +42,8 @@ class RegisterScreen extends StatelessWidget {
               ),
               body: Column(
                 children: [
-                  CustomStepper(step1: cubit.currentStep),
+                  CustomStepper(step1: cubit.currentStep)
+                      .setOnlyPadding(context, 0, 0, 0.046, 0.046),
                   Expanded(
                     child: PageView(
                       physics: const NeverScrollableScrollPhysics(),
@@ -122,6 +124,9 @@ class RegisterScreen extends StatelessWidget {
                         SingleChildScrollView(
                           child: Column(
                             children: [
+                              SvgPicture.asset(
+                                ImageManager.addPhoto,
+                              ),
                               CustomTextField(
                                 title: StringManager.about,
                                 isAbout: true,
@@ -133,28 +138,44 @@ class RegisterScreen extends StatelessWidget {
                                     child: const SizedBox(),
                                   ),
                                 ),
-                              ),
+                              ).setVerticalPadding(context, 0.02),
                               const CustomRadioButton(
                                 text: StringManager.gender,
                                 radio1: StringManager.male,
                                 radio2: StringManager.female,
-                              ),
+                              ).setVerticalPadding(context, 0.02),
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   const Text(StringManager.favSocialMedia),
                                   FavSocialMedia(
-                                    checked: true,
-                                    onPressed: () {},
+                                    checked: cubit.facebook,
+                                    onPressed: () {
+                                      cubit.toggleFacebook();
+                                    },
                                     text: "FaceBook",
                                   ),
+                                  FavSocialMedia(
+                                    checked: cubit.twitter,
+                                    onPressed: () {
+                                      cubit.toggleTwitter();
+                                    },
+                                    text: "Twitter",
+                                  ),
+                                  FavSocialMedia(
+                                    checked: cubit.linkedIn,
+                                    onPressed: () {
+                                      cubit.toggleLinkedIn();
+                                    },
+                                    text: "LinkedIn",
+                                  ),
                                 ],
-                              ),
+                              ).setVerticalPadding(context, 0.02),
                               CustomButton(
                                 text: StringManager.submit,
                                 width: mediaQuery.size.width,
                                 onPressed: () {},
-                              ).setVerticalPadding(context, 0.02),
+                              ),
                             ],
                           ).setOnlyPadding(context, 0, 0.046, 0.046, 0.046),
                         ),

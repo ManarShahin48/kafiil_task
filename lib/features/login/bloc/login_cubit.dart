@@ -46,10 +46,10 @@ class LoginCubit extends Cubit<LoginStates> {
     );
     return response.fold((l) {
       print("false");
-      return false;
+      return Future.value(false);
     }, (r) {
       print("true");
-      return true;
+      return Future.value(true);
     });
   }
 }

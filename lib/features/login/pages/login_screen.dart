@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:kafiil_task/core/routes/pages_route_name.dart';
 import 'package:kafiil_task/core/components/custom_app_bar.dart';
@@ -93,7 +94,10 @@ class LoginScreen extends StatelessWidget {
                     CustomButton(
                       text: StringManager.login,
                       onPressed: () {
-                        cubit.login();
+                        EasyLoading.show();
+                        cubit.login().then((value) {
+                          EasyLoading.dismiss();
+                        });
                       },
                     ).setVerticalPadding(context, 0.02),
                     Row(

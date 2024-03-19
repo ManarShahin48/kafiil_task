@@ -25,7 +25,7 @@ class CustomTextField extends StatelessWidget {
           title,
         ),
         SizedBox(
-          height: isAbout ? 150 : null,
+          height: isAbout ? 120 : null,
           child: TextFormField(
             obscureText: obscureText,
             decoration: InputDecoration(
