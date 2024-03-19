@@ -116,6 +116,12 @@ class RegisterScreen extends StatelessWidget {
                                   cubit.jumpToPage(1);
                                 },
                               ).setVerticalPadding(context, 0.02),
+                            ],
+                          ).setOnlyPadding(context, 0, 0.046, 0.046, 0.046),
+                        ),
+                        SingleChildScrollView(
+                          child: Column(
+                            children: [
                               CustomTextField(
                                 title: StringManager.about,
                                 isAbout: true,
@@ -152,7 +158,6 @@ class RegisterScreen extends StatelessWidget {
                             ],
                           ).setOnlyPadding(context, 0, 0.046, 0.046, 0.046),
                         ),
-                        Text('data'),
                       ],
                     ),
                   ),
